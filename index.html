@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Belu! ✨</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Lobster+Two:ital,wght@1,700&family=Pacifico&family=Playball&family=Playfair+Display:ital,wght@1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Intro 3D Loader -->
+    <div class="intro-loader" id="introLoader">
+        <div class="word-3d-wrapper">
+            <h1 class="word-3d" data-text="Belu">Belu</h1>
+        </div>
+        <div class="password-container">
+            <p class="password-hint">Ingresa la contraseña para desbloquear tu sorpresa 🔑</p>
+            <form id="passwordForm">
+                <input type="password" id="passwordInput" placeholder="Contraseña..." autocomplete="off">
+                <button type="submit" id="submitBtn"><i class="fa-solid fa-heart"></i></button>
+            </form>
+            <p class="error-message" id="errorMessage"></p>
+        </div>
+    </div>
+
+    <!-- Background Canvas for Floating Petals/Confetti -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Floating Audio Control -->
+    <div class="audio-control" id="audioToggle">
+        <i class="fa-solid fa-music"></i>
+        <span>Música</span>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="badge-container" id="fullscreenBtn">
+                <div class="badge">Para Belu 💖</div>
+                <div class="badge-arrow">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <span>Haz clic aquí para pantalla completa 🖥️📱</span>
+                </div>
+            </div>
+            <h1 class="hero-title">Feliz Cumpleaños</h1>
+            <p class="hero-subtitle">Un rinconcito de recuerdos y deseos para una persona increíble.</p>
+            <div class="scroll-indicator">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </header>
+
+        <!-- Interactive Envelope & Letter Section -->
+        <section class="envelope-section">
+            <h2 class="section-title">Una carta para ti</h2>
+            <div class="envelope-container-wrapper">
+                <button class="close-letter-btn" id="closeLetterBtn" aria-label="Cerrar carta">&times;</button>
+                <div class="envelope-wrapper">
+                    <div class="envelope" id="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter" id="letter">
+                            <div class="letter-content">
+                                <h3>Hola Belu preciosa,</h3>
+                                <p>Hoy es un día súper especial y quería regalarte algo diferente, algo que pudieras conservar y visitar cada vez que quieras recordar lo especial que eres.</p>
+                                <p>Quiero comenzar agradeciéndote por tu amistad, por tu alegría contagiosa, por las risas compartidas y por ser esa persona que literalmente ilumina cualquier lugar al que llega. Eres una amiga excepcional, de esas personas que dejan huella en la vida de quienes tienen la suerte de conocerte.</p>
+                                <p>Te admiro muchísimo y me siento muy orgulloso de todo lo que eres y de todo lo que has logrado por tu dedicación, tu forma de ver la vida y la manera en que enfrentas cada desafío ya que son cualidades que de verdad cuesta encontrar en alguien. Me llena de felicidad tenerte a mi lado y poder compartir tantos momentos contigo aunque a veces no me comporte como debo jiji perdón.</p>
+                                <p>Hoy deseo de corazón que la vida te siga regalando motivos para sonreír, que cada uno de tus sueños encuentre el camino para hacerse realidad y que nunca te falten la salud, el amor, la tranquilidad y las personas que te quieren. Que este nuevo año de vida venga lleno de experiencias inolvidables, aprendizajes, éxitos y muchísima felicidad y aunque estemos próximos a que nuestros caminos se separen creeme que estare ahí para ti cuando lo necesites, no dudes en buscarme que siempre estare ahí para ti Belu.</p>
+                                <p>Gracias por ser tú, por tu amistad y por todos esos pequeños momentos que hacen que la vida sea más bonita. Nunca olvides lo valiosa, especial y querida que eres.</p>
+                                <p class="signature">¡Feliz cumpleaños, Belu! 💖</p>
+                                <p class="signature-name">Que cumplas muchos años más y que este sea solo el comienzo de un año maravilloso. ✨</p>
+                                <div class="letter-scroll-hint">
+                                    <p><i class="fa-solid fa-circle-down"></i> Cierra (X) para ver fotos abajo 👇</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Videos (Left side) -->
+                <div class="floating-videos left-side">
+                    <div class="video-card card-v1">
+                        <div class="video-wrapper">
+                            <video src="videos/IMG_0728.mov" autoplay loop muted playsinline></video>
+                        </div>
+                    </div>
+                    <div class="video-card card-v2">
+                        <div class="video-wrapper">
+                            <video src="videos/IMG_0761.mov" autoplay loop muted playsinline></video>
+                        </div>
+                    </div>
+                    <div class="video-card card-v3">
+                        <div class="video-wrapper">
+                            <video src="videos/IMG_1902.mov" autoplay loop muted playsinline></video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Videos (Right side) -->
+                <div class="floating-videos right-side">
+                    <div class="video-card card-v4">
+                        <div class="video-wrapper">
+                            <video src="videos/IMG_0764.mov" autoplay loop muted playsinline></video>
+                        </div>
+                    </div>
+                    <div class="video-card card-v5">
+                        <div class="video-wrapper">
+                            <video src="videos/IMG_0788.mov" autoplay loop muted playsinline></video>
+                        </div>
+                    </div>
+                    <div class="video-card card-v6">
+                        <div class="video-wrapper">
+                            <video src="videos/IMG_2867.mov" autoplay loop muted playsinline></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="envelope-hint" id="envelopeHint">Haz clic en el sobre para abrir tu carta ✨</p>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="section-title">Momentos Especiales</h2>
+            <p class="section-subtitle">Haz clic en las fotos para verlas más grandes</p>
+            
+            <div class="collage-grid" id="collageGrid">
+                <!-- Las fotos se cargarán dinámicamente desde script.js -->
+            </div>
+        </section>
+
+        <!-- Interactive Wishes / Highlights Section -->
+        <section class="wishes-section">
+            <h2 class="section-title">Mis deseos para ti</h2>
+            <div class="wishes-grid">
+                <div class="wish-card">
+                    <div class="wish-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Amor e Inspiración</h3>
+                    <p>Que nunca te falten motivos para sonreír ni personas que valoren el hermoso corazón que tienes.</p>
+                </div>
+                <div class="wish-card">
+                    <div class="wish-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Magia y Aventuras</h3>
+                    <p>Que este nuevo año venga cargado de viajes, nuevas experiencias y aventuras inolvidables.</p>
+                </div>
+                <div class="wish-card">
+                    <div class="wish-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3>Éxitos y Metas</h3>
+                    <p>Confío plenamente en tu talento y sé que lograrás todo lo que te propongas. ¡Brilla siempre!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Hecho con mucho amor para Belu en su día especial • 2026</p>
+        </footer>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" id="lightboxClose">&times;</div>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Ampliada">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Hidden background audio (User can replace with a beautiful birthday track) -->
+    <audio id="bgMusic" src="musicacumple.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
